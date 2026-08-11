@@ -13,8 +13,10 @@ Dazu Stichprobe (15%) aus Datengrundlage (Volltextzuordnung) und manuelle Annota
 --> Annotationen Menschen vs. LLM
 
 ### Erwartete Erkenntnisse:
-Frames-Zuordnung Titel vs. Volltext
-Frames Zuordnung Mensch vs. LLM
+Frames-Zuordnung Titel vs. Volltext (LLM vs. Mensch)
+Frames-Zuordnung Titel (Mensch)
+Frames-Zuordnung Titel (LLM)
+Frames-Zuordnung Mensch vs. LLM
 
 
 ### Promt LLM
