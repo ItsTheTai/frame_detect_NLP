@@ -27,8 +27,9 @@ Behalte Filename, Headline_GER und Language unverändert und liefere die fertig 
 Prüfe die Datei nach dem Schreiben auf Vollständigkeit und gültige Werte.
 
 
-### Detailausgabe LLM (ChatGPT+):
+### Detailausgabe LLM:
 Promt: Jerome Corsi, Mitarbeiter von Roger Stone, feiert das Ende der Mueller-Untersuchung, nachdem er sich geweigert hat, einen Plädoyervertrag zu unterzeichnen
+
 Ausgabe ChatGPT+: Der Titel sollte so codiert werden:
 Legality, constitutionality and jurisprudence: 2 (primär)
 Political: 1 (zusätzlich einschlägig)
@@ -36,6 +37,14 @@ Alle übrigen Frames: 0
 Warum: Im Mittelpunkt stehen die Mueller-Untersuchung und die Weigerung, einen Plädoyervertrag zu unterzeichnen. Ein solcher „plea deal“ ist Bestandteil eines juristischen Verfahrens und fällt nach dem Codebook primär unter Legality, constitutionality and jurisprudence.
 Political ist zusätzlich einschlägig, weil Jerome Corsi und Roger Stone eng mit dem politisch geprägten Mueller-Komplex verbunden sind. Dieser politische Kontext ist im Titel erkennbar, aber weniger dominant als das Rechtsverfahren.
 Crime and punishment würde ich nicht vergeben: Der Titel nennt weder eine konkrete Straftat noch Verhaftung, Verurteilung oder Bestrafung. Auch Public opinion passt nicht, da Corsis individuelles „Feiern“ laut Codebook noch keine öffentliche Meinung darstellt.
+
+Ausgabe ChatGPT:
+Meine ursprüngliche Codierung:
+Political = 2
+Legality = 1
+
+Warum Political = 2? [likely] Roger Stone, Mueller und die Trump-Russia-Untersuchung haben einen klaren politischen Kontext.
+
 Ausgabe Claude: 1. Jerome Corsi / Mueller-Untersuchung / Plädoyervertrag
 Codierung: Legality (2), Political (1)
 Ein "Plädoyervertrag" (plea deal) ist ein Instrument des Gerichtsverfahrens — die Weigerung, ihn zu unterschreiben, ist ein Akt innerhalb eines laufenden Ermittlungs-/Gerichtsprozesses. Das Codebook ordnet Verfahrenselemente wie "pleads guilty", "plea talks" explizit der Legality-Dimension zu (siehe Beispiel im Codebook selbst: "Kaczynski plea talks crumble" → Legality). [likely, per Analogieschluss aus dem Codebook-Beispiel]
@@ -44,7 +53,7 @@ Political (1) als Sekundärcode, weil Corsi als Stone-Mitarbeiter Teil eines pol
 Meine Unsicherheit hier [likely, nicht certain]: Man könnte argumentieren, dass Political stattdessen primär sein sollte, weil die gesamte Mueller-Affäre im Kern eine parteipolitische Auseinandersetzung ist und "feiert" ein politisches Framing signalisiert, nicht nur ein juristisches. Das Codebook selbst warnt bei "Crime and Punishment vs. Political Factors", dass bei politisch verorteten Sanktionen (z.B. Kongress-Zensur) die politische Einbettung den Ausschlag geben kann. Wenn du eine strengere Linie willst — "jede Nennung einer politischen Figur/Partei-Konfliktlinie = Political primär" — wäre Political(2)/Legality(1) hier ebenso vertretbar. Ich habe mich für Legality primär entschieden, weil der Nachrichtenkern (Plädoyervertrag-Weigerung, Ende der Untersuchung) verfahrensrechtlich ist, nicht wahlpolitisch.
 
 Promt: Brasilianischer Waffenhändler in den USA festgenommen
-AusgabeChat GPT+: Die passende Codierung lautet:
+Ausgabe Chat GPT+: Die passende Codierung lautet:
 Crime and punishment: 2 (primär)
 External regulation and reputation: 1 (zusätzlich)
 alle übrigen Frames: 0
@@ -55,6 +64,13 @@ Security and defense: Waffen allein reichen nicht; es wird keine drohende Gefahr
 Legality: Es fehlt ein Gericht, Rechtsstreit oder eine Entscheidung über die Rechtmäßigkeit.
 Economic: „Händler“ bezeichnet nur die Person beziehungsweise Tätigkeit; finanzielle Auswirkungen oder Marktfragen werden nicht behandelt.
 Bei sehr konservativer Codierung wäre auch ausschließlich Crime and punishment = 2 gut begründbar.
+
+Ausgabe ChatGPT: Meine Codierung:
+Crime and Punishment = 2
+Security and Defense = 1
+[certain] Crime and Punishment = 2 halte ich für sehr eindeutig. Das Codebook nennt ausdrücklich „arrests“ und „police activity“ als Crime-and-Punishment-Signale.
+Warum habe ich zusätzlich Security and Defense = 1 vergeben? [likely] Weil „Waffenhändler“ intuitiv ein Sicherheits-/Bedrohungssignal darstellt. Bei einer strengeren Anwendung des Codebooks würde ich diese Markierung allerdings wieder zurücknehmen.
+
 Ausgabe Claude: Codierung: Crime and Punishment (2), Security and Defense (1)
 "Festgenommen" (arrested) ist laut Codebook der Kernindikator für Crime and Punishment: Verhaftungen, Gesetzesverstöße, Strafverfolgung fallen explizit in diese Dimension. [certain — direkte Übereinstimmung mit Codebook-Beispielen wie "DNA leading to the arrest of suspects... Crime and Punishment"]
 Security and Defense als Sekundärcode, weil Waffenhandel im internationalen Kontext (Brasilianer, USA) potenziell eine Bedrohungsdimension berührt — allerdings schwächer, da die Headline keine Bedrohungsabwehr (Grenzsicherung, Prävention) beschreibt, sondern eine bereits erfolgte Festnahme, also retrospektiv.
