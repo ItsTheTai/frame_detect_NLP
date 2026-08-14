@@ -25,7 +25,7 @@ Konsistenz Frames-Zuordnung Titel menschliche Annotatoren vs. LLms
 Leistung Frames Erkennung Titel vs. Volltext (LLM vs. Mensch)
 
 ### Promt LLM
-Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere anschließend alle Headlines in headlines_dataset_full_LLM.xlsx. Verwende ausschließlich die Frame-Definitionen und Coding-Regeln des Codebooks als Grundlage. In den vorhandenen Frame-Spalten soll das passendste/primäre Frame mit 2 markiert werden, weitere einschlägige Frames mit 1 und nicht passende Frames mit 0. Wenn es keine einschlägigen Frames gibt, werden alle Frames mit 0 markiert. Behalte Filename, Headline_GER und Language unverändert und liefere die fertig annotierte XLSX-Datei zurück. Prüfe die Datei nach dem Schreiben auf Vollständigkeit und gültige Werte.
+Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere anschließend alle Headlines in headlines_dataset_15sample_LLM.xlsx. Verwende ausschließlich die Frame-Definitionen und Coding-Regeln des Codebooks als Grundlage. In den vorhandenen Frame-Spalten soll das passendste/primäre Frame mit 2 markiert werden, weitere einschlägige Frames mit 1 und nicht passende Frames mit 0. Wenn es keine einschlägigen Frames gibt, werden alle Frames mit 0 markiert. Behalte Filename, Headline_GER und Language unverändert und liefere die fertig annotierte XLSX-Datei zurück. Prüfe die Datei nach dem Schreiben auf Vollständigkeit und gültige Werte.
 
 
 ### Detailausgabe LLM:
