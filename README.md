@@ -25,11 +25,7 @@ Konsistenz Frames-Zuordnung Titel menschliche Annotatoren vs. LLms
 Leistung Frames Erkennung Titel vs. Volltext (LLM vs. Mensch)
 
 ### Promt LLM
-Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere anschließend alle Headlines in headlines_dataset_15sample_LLM.xlsx. 
-Verwende ausschließlich die Frame-Definitionen und Coding-Regeln des Codebooks als Grundlage. 
-In den vorhandenen Frame-Spalten soll das passendste/primäre Frame mit 2 markiert werden, weitere einschlägige Frames mit 1 und nicht passende Frames mit 0. 
-Behalte Filename, Headline_GER und Language unverändert und liefere die fertig annotierte XLSX-Datei zurück. 
-Prüfe die Datei nach dem Schreiben auf Vollständigkeit und gültige Werte.
+Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere anschließend alle Headlines in headlines_dataset_full_LLM.xlsx. Verwende ausschließlich die Frame-Definitionen und Coding-Regeln des Codebooks als Grundlage. In den vorhandenen Frame-Spalten soll das passendste/primäre Frame mit 2 markiert werden, weitere einschlägige Frames mit 1 und nicht passende Frames mit 0. Wenn es keine einschlägigen Frames gibt, werden alle Frames mit 0 markiert. Behalte Filename, Headline_GER und Language unverändert und liefere die fertig annotierte XLSX-Datei zurück. Prüfe die Datei nach dem Schreiben auf Vollständigkeit und gültige Werte.
 
 
 ### Detailausgabe LLM:
@@ -154,18 +150,4 @@ Saubere Titel-Annotationen die einen Ausschnitt aus den Volltextannotationen dar
 Aussage darüber, welche Frames es häufiger in den Titel schaffen und welche Frames regelmäßig nur im Volltext vorkommen.
 
 ### Promt
-Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere anschließend alle Headlines in headlines_dataset_full_LLM.xlsx. Verwende ausschließlich die Frame-Definitionen und Coding-Regeln des Codebooks als Grundlage. In den vorhandenen Frame-Spalten soll das passendste/primäre Frame mit 2 markiert werden, weitere einschlägige Frames mit 1 und nicht passende Frames mit 0. Behalte Filename, Headline_GER und Language unverändert und liefere die fertig annotierte XLSX-Datei zurück. Prüfe die Datei nach dem Schreiben auf Vollständigkeit und gültige Werte.
-
-Achtung, bei Claude Promt-Erweiterung notwendig, da Ausgabe:
-[certain] Bevor ich anfange: Der Codebook ist explizit auf sechs US-Politikfelder zugeschnitten (Todesstrafe, Klimawandel, Waffenrecht, Einwanderung, gleichgeschlechtliche Ehe, Rauchen/Tabak). Ich habe mir die ersten ~60 Headlines im Datensatz angesehen – sie behandeln fast ausschließlich Brexit, EU-Austrittsverhandlungen, Trump/Mueller-Ermittlungen und britische Innenpolitik. Keines der sechs Codebook-Themen kommt vor.
-
-I disagree with just forcing the codebook onto this dataset as-is, because the issue-specific relevance/coding rules (pages 27–34, 38–42) — which carry most of the concrete guidance ("anchor babies" → Fairness, "build the wall" → Security, NRA → Public Sentiment, etc.) — simply don't apply to Brexit/Trump-era UK politics headlines. Only the generic frame definitions (pages 4–21, e.g. Economics, Political Factors, Legality, External Regulation and Reputation) transfer at all, and even those require me to substitute analogous judgment calls the codebook authors never specified (e.g. is "Brexit trade deal" Economics or Political Factors? is "national security" language in a Brexit context Security and Defense the way it's used for terrorism/border framing?).
-
-Here is what I would do instead: apply only the general, issue-transcending frame definitions (section "Frame Dimensions," pp. 4-21) and the Tone logic where relevant, explicitly ignoring the six issue-specific rule sections, and document that substitution clearly in the output/methodology note — rather than silently pretending the issue-specific rules apply.
-
-The risk in blindly coding all 1401 headlines right now: I'd be manufacturing false precision — assigning "primary frame = 2" codes to political headlines using rules the codebook's own authors designed for a different substantive domain, without your sign-off on that methodological choice. That's a validity problem for downstream research use, not just a formatting one.
-
-Two things I need from you before running this at scale (1401 rows × 14 frames is a large, effortful job I want to get right once, not redo):
-
-F: Bei 1401 Headlines x 14 Frames: Wie soll ich mit Grenzfällen umgehen, in denen kein Frame klar dominiert?
-A: Bei echter Unklarheit auch mehrere 1en ohne 2 zulassen, oder alle 0 wenn kein Frame-Signal erkennbar ist
+Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere anschließend alle Headlines in headlines_dataset_full_LLM.xlsx. Verwende ausschließlich die Frame-Definitionen und Coding-Regeln des Codebooks als Grundlage. In den vorhandenen Frame-Spalten soll das passendste/primäre Frame mit 2 markiert werden, weitere einschlägige Frames mit 1 und nicht passende Frames mit 0. Wenn es keine einschlägigen Frames gibt, werden alle Frames mit 0 markiert. Behalte Filename, Headline_GER und Language unverändert und liefere die fertig annotierte XLSX-Datei zurück. Prüfe die Datei nach dem Schreiben auf Vollständigkeit und gültige Werte.
