@@ -166,3 +166,5 @@ Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere ansc
 für die folgenden Blöcke: 
 Annotiere jetzt die Zeilen 151 bis 300 im gleichen Format (ohne die CSV-Kopfzeile erneut auszugeben).
 
+Einstellungen gemini 3.1 (preview), thinking level high, temperature 0.0, system prompt siehe prompt oben
+
