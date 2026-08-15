@@ -27,6 +27,15 @@ Leistung Frames Erkennung Titel vs. Volltext (LLM vs. Mensch)
 ### Promt LLM
 Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere anschließend alle Headlines in headlines_dataset_15sample_LLM.xlsx. Verwende ausschließlich die Frame-Definitionen und Coding-Regeln des Codebooks als Grundlage. In den vorhandenen Frame-Spalten soll das passendste/primäre Frame mit 2 markiert werden, weitere einschlägige Frames mit 1 und nicht passende Frames mit 0. Wenn es keine einschlägigen Frames gibt, werden alle Frames mit 0 markiert. Behalte Filename, Headline_GER und Language unverändert und liefere die fertig annotierte XLSX-Datei zurück. Prüfe die Datei nach dem Schreiben auf Vollständigkeit und gültige Werte.
 
+### angepasster Prompt für die Anpassung des SemEval Korpus
+Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere anschließend alle Headlines in. headlines_dataset_full_LLM.xlsx. Verwende ausschließlich die Frame-Definitionen und Coding-Regeln des Codebooks als Grundlage. In den vorhandenen Frame-Spalten soll das passendste/primäre Frame mit 2 markiert werden, weitere einschlägige Frames mit 1 und nicht passende Frames mit 0. Wenn es keine einschlägigen Frames gibt, werden alle Frames mit 0 markiert. Behalte Filename, Headline_GER und Language unverändert und liefere die fertig annotierte XLSX-Datei zurück. Prüfe die Datei nach dem Schreiben auf Vollständigkeit und gültige Werte.  
+
+#### Anpassung für Gemini - batch abfertigung 
+Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere anschließend die Zeilen 1 bis 150 in headlines_dataset_full_LLM.csv. Verwende ausschließlich die Frame-Definitionen und Coding-Regeln des Codebooks als Grundlage. In den vorhandenen Frame-Spalten soll das passendste/primäre Frame mit 2 markiert werden, weitere einschlägige Frames mit 1 und nicht passende Frames mit 0. Wenn es keine einschlägigen Frames gibt, werden alle Frames mit 0 markiert. Behalte Filename, Headline_GER und Language unverändert und gib das Ergebnis direkt als sauberen CSV-Codeblock aus.
+
+für die folgenden Blöcke: 
+Annotiere jetzt die Zeilen 151 bis 300 im gleichen Format (ohne die CSV-Kopfzeile erneut auszugeben).
+
 
 ### Detailausgabe LLM:
 Promt: Jerome Corsi, Mitarbeiter von Roger Stone, feiert das Ende der Mueller-Untersuchung, nachdem er sich geweigert hat, einen Plädoyervertrag zu unterzeichnen
