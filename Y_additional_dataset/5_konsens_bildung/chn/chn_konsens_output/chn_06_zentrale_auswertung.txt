@@ -1,0 +1,31 @@
+CHN Policy-Frame-Titelannotation – zentrale Auswertung
+============================================================
+
+Artikel: 312
+LLM-Modelle: 3
+Konsensregel: mindestens 2 von 3 positiven Stimmen
+LLM-Umcodierung: 2 -> 1
+Ground Truth: chn_ground_truth_full.csv
+
+Konsensuelle positive Artikel-Frame-Paare: 680
+Davon 2/3: 271
+Davon 3/3: 409
+Nach Ground-Truth-Abgleich behalten: 467
+Nach Ground-Truth-Abgleich gestrichen: 213
+Metadatenabweichungen zwischen Dateien: 0
+
+Finale positive Frames nach Frame:
+  - Economic: 49
+  - Capacity and resources: 11
+  - Morality: 16
+  - Fairness and equality: 15
+  - Legality, constitutionality and jurisprudence: 9
+  - Policy prescription and evaluation: 55
+  - Crime and punishment: 40
+  - Security and defense: 51
+  - Health and safety: 40
+  - Quality of life: 6
+  - Cultural identity: 25
+  - Public opinion: 21
+  - Political: 32
+  - External regulation and reputation: 97
