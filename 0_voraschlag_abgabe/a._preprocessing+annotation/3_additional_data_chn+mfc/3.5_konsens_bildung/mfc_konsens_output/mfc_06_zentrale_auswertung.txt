@@ -1,0 +1,31 @@
+MFC Policy-Frame-Titelannotation – zentrale Auswertung
+============================================================
+
+Artikel: 6214
+LLM-Modelle: 3
+Konsensregel: mindestens 2 von 3 positiven Stimmen
+LLM-Umcodierung: 2 -> 1
+Ground Truth: mfc_ground_truth_full.csv
+
+Konsensuelle positive Artikel-Frame-Paare: 5270
+Davon 2/3: 3652
+Davon 3/3: 1618
+Nach Ground-Truth-Abgleich behalten: 1285
+Nach Ground-Truth-Abgleich gestrichen: 3985
+Metadatenabweichungen zwischen Dateien: 0
+
+Finale positive Frames nach Frame:
+  - Economic: 103
+  - Capacity and resources: 113
+  - Morality: 22
+  - Fairness and equality: 23
+  - Legality, constitutionality and jurisprudence: 428
+  - Policy prescription and evaluation: 454
+  - Crime and punishment: 33
+  - Security and defense: 8
+  - Health and safety: 0
+  - Quality of life: 24
+  - Cultural identity: 7
+  - Public opinion: 5
+  - Political: 41
+  - External regulation and reputation: 24
