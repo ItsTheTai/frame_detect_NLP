@@ -1,0 +1,14 @@
+ANNOTATIONSSTUDIE – ZENTRALE AUSGABEN
+================================================
+Artikel im Sample: 210
+Menschliche Annotationen: 3
+LLM-Annotationen: 4
+
+Wichtiger Interpretationshinweis:
+Die Leistungsmetriken messen die Überlappung der Titelannotation mit der SemEval-Volltextannotation.
+Sie sind keine direkte Messung eines unabhängigen Titel-Goldstandards.
+
+Höchster menschlicher Micro-F1: 0.4475 (headlines_dataset_15sample_annotiert_Tai)
+Höchster LLM-Micro-F1: 0.4705 (headlines_dataset_15sample_LLM_annotiert_Gemini_3.6Flash)
+
+Detaillierte Ergebnisse nach Frame und Sprache befinden sich in 01_annotationsstudie_ergebnisse.xlsx.
