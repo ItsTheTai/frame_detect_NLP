@@ -57,18 +57,19 @@ The pipeline flows from (a) raw SemEval data through human pre-study annotations
 * After LLM annotation: 7,776 rows initially
 * After filtering: 2,590 training samples (keeping German/Chinese or those with assigned frames)
 * Gold standard: 70 manually annotated Tagesschau headlines
-The drop-off in macro-F₁ (0.532 to 0.379) on the gold standard reflects challenges with underrepresented frames, particularly the rare categories like Quality of Life (1%), Cultural Identity (1.29%), and Fairness & Equality (1.71%).
 
 ## Key Results
 * Full Dataset (Mixed):
-  * Micro-F₁: 0.716
-  * Macro-F₁: 0.532
+  * Micro-F1: 0.716
+  * Macro-F1: 0.532
   * Dataset size: 2,590 headlines after filtering
   * Trained on combined SemEval + CHN + MFC data
 * Tagesschau Gold Standard Benchmark:
-  * Micro-F₁: 0.588
-  * Macro-F₁: 0.379
+  * Micro-F1: 0.588
+  * Macro-F1: 0.379
   * Test set: 70 independently annotated human headlines from Tagesschau (Sept 17, 2026)
   * More realistic evaluation against real-world German news (Sept 22, 2026
+ 
+ The drop-off in macro-F₁ (0.532 to 0.379) on the gold standard reflects challenges with underrepresented frames, particularly the rare categories like Quality of Life (1%), Cultural Identity (1.29%), and Fairness & Equality (1.71%).
 
 
