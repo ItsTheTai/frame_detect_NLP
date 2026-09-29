@@ -70,6 +70,6 @@ The pipeline flows from (a) raw SemEval data through human pre-study annotations
   * Test set: 70 independently annotated human headlines from Tagesschau (Sept 17, 2026)
   * More realistic evaluation against real-world German news (Sept 22, 2026
  
- The drop-off in macro-F₁ (0.532 to 0.379) on the gold standard reflects challenges with underrepresented frames, particularly the rare categories like Quality of Life (1%), Cultural Identity (1.29%), and Fairness & Equality (1.71%).
+ The drop-off in macro-F1 (0.532 to 0.379) on the gold standard reflects challenges with underrepresented frames, particularly the rare categories like Quality of Life (1%), Cultural Identity (1.29%), and Fairness & Equality (1.71%).
 
 
