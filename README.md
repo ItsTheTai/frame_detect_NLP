@@ -4,7 +4,10 @@ News headlines condense complex issues into key words that set the perspective (
 * Language(s): Python (Jupyter Notebooks, 100%)
 * Framework / runtime: Hugging Face Transformers, PyTorch
 * Notable libraries: pandas, transformers (AutoTokenizer, AutoModelForSequenceClassification), torch, sklearn (for metrics), BERTopic (for clustering)
-* Formal Paper: [PDF](d._paper+appendices/final_paper_framedetect_ss26.pdf) (Authors: Felix Wiendl, Alvaro Dill, Tai Nguyen)
+* Formal Paper: [PDF](d._paper+appendices/final_paper_framedetect_ss26.pdf). Authors:
+  * Felix Wiendl, matriculation nr. 1643703
+  * Alvaro Dill, matriculation nr. 2288031
+  * Tai Nguyen, matriculation nr. 2234715
 
 ## Target Policy Frames & Distribution of LLM title annotated Frames
 The model classifies headlines across 14 policy frames adapted from the Policy Frames Codebook (Boydstun et al. 2020), plus a technical residual category:
