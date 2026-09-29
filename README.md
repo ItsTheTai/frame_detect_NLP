@@ -51,7 +51,7 @@ The pipeline flows from (a) the formating + translation of SemEval data and its 
     * `goldstandard_auswertung`: Documentation of Label Discussions and final Gold Standard
   * `all_headlines_260922.xlsx`: Scraped headlines from real news outlets
   * `tagesschau_template_260917.xlsx`: Annotation template
-*  `d._paper+appebduces/`: Draft paper, final paper and appendices A (LLM prompts) and B (
+*  `d._paper+appebduces/`: Draft paper, final paper and appendices A (LLM prompts) and B (Ground News Prototype)
 
 ## Data Composition
 * Starting point: ~1,400 SemEval 2023 headlines
