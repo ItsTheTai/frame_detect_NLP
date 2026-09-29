@@ -11,7 +11,7 @@
 ## 2\. Prompts der Datenerweiterung für das Fine-Tuning
 
 ## Annotation von SemEval und CHN
-
+Prompt 1 and 2 sind bis auf das Ausgabeformat identisch. Prompt 1 verwendet dabei.xlsx während Prompt 2 .csv verlangt.
 
 
 **Prompt 2:** “Lies das hochgeladene Policy Frames Codebook vollständig ein und annotiere anschließend alle Headlines in headlines\_dataset\_15sample\_LLM.csv. Verwende ausschließlich die Frame-Definitionen und Coding-Regeln des Codebooks als Grundlage. In den vorhandenen Frame-Spalten soll das passendste/primäre Frame mit 2 markiert werden, weitere einschlägige Frames mit 1 und nicht passende Frames mit 0. Wenn es keine einschlägigen Frames gibt, werden alle Frames mit 0 markiert. Behalte Filename, Headline\_GER und Language unverändert und liefere die fertig annotierte CSV-Datei zurück. Prüfe die Datei nach dem Schreiben auf Vollständigkeit und gültige Werte.”
