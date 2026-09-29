@@ -28,21 +28,22 @@ The model classifies headlines across 14 policy frames adapted from the Policy F
 
 ## Methods Outline
 * **Transformer-Based Multi-Label Frame Classifier**: A fine-tuned `LSX-UniWue/ModernGBERT_134M` model trained to detect 14 generic policy frames (plus a residual category) at the headline level.
-* **Weak Supervision \& Pseudo-Labeling Pipeline**: An automated annotation strategy combining LLM annotations (GPT-5.6, Claude, Gemini/Mistral) with majority voting and article-reference matching across SemEval-2023, Media Frames Corpus (MFC), and Chinese News Framing Dataset (CHN).
+* **Weak Supervision \& Pseudo-Labeling Pipeline**: An automated annotation strategy combining LLM annotations (GPT-5.6, Claude, Gemini/Mistral; LLM prompts are stored in appendix A) with majority voting and article-reference matching across SemEval-2023, Media Frames Corpus (MFC), and Chinese News Framing Dataset (CHN).
 * **Human-Annotated Gold Standard**: A manually curated benchmark set of 70 *Tagesschau* headlines for model evaluation against real-world media.
-* **Ground-News-Inspired Prototype**: A BERTopic clustering and inference pipeline designed to group comparable news headlines across German news outlets (*Tagesschau*, *FAZ*, *taz*) and highlight frame distributions.
+* **Ground-News-Inspired Prototype**: BERTopic clustering and inference pipeline designed to group comparable news headlines across German news outlets (*Tagesschau*, *FAZ*, *taz*) and highlight frame distributions. The final results of the pipe are outputted in form of an excel file (Appendix B)
 
 ## Repo Structure
 The pipeline flows from (a) the formating + translation of SemEval data and its ground truth, a human and AI annotation pre-study as well as general preprocessing, also leveraging LLMs (GPT, Claude, Gemini, Mistral) for weak supervision on 1400+ headlines with consensus voting. Combined with additional datasets (CHN, MFC), the aggregated training data fine-tunes a Modern GBERT 134M model in (b), which is then evaluated in (c) against real Tagesschau headlines. The classification is multi-label meaning each headline can match 0 to multiple frames from the 15-category taxonomy.
+
 * `a._preprocessing+annotation/`: Data preparation and annotation pipeline
   * `0_data_startingpoint_semeval23_framedetect/`: Raw multilingual SemEval 2023 data (en, fr, ge, it, po)
   * `1_annotationsstudie_pre-study_semeval/`: Pre-study human and llm annotation: Prepared data + Annotated data + Results
   * `2_llm-titel-annotation-aller-1400-titel_semeval/`: LLM-based annotation of ~1400 headlines: Unlabeled set + LLM annotations + Ground truth 
-  *  `3_additional_data_chn+mfc/`: Additional datasets and LLM annotation on new data
-  *  `Z_Policy_Frames_Codebook.pdf`: Reference codebook (Boydstun et al. 2020)
-  *  `preprocessing.ipynb`: further preprocessing after annotation study (semeval, mfc, chn) + llm annotation (semeval, mfc, chn) + normalization and combining to trainingdataset
-*  `b._fine_tuning+model_application/2_fine_tuning.ipynb`: Model training and inference using LSX-`UniWue/ModernGBERT_134M` on labeled data
-*  `c._real_data_application/`: Evaluation and applied inference
+  * `3_additional_data_chn+mfc/`: Additional datasets and LLM annotation on new data
+  * `Z_Policy_Frames_Codebook.pdf`: Reference codebook (Boydstun et al. 2020)
+  * `preprocessing.ipynb`: further preprocessing after annotation study (semeval, mfc, chn) + llm annotation (semeval, mfc, chn) + normalization and combining to trainingdataset
+* `b._fine_tuning+model_application/2_fine_tuning.ipynb`: Model training and inference using LSX-`UniWue/ModernGBERT_134M` on labeled data
+* `c._real_data_application/`: Evaluation and applied inference
   * `3_realdata_model_application.ipynb`: Tagesschau gold standard evaluation (70 headlines) + Applied combination of real data inference and topic clustering using BERTopic
   * `Goldstandard_Tagesschau/`: Manually annotated benchmark sets + Evaluation
     * `[name]_tagesschau_goldstandard_geprueft_[date]`: three annotation files
@@ -50,7 +51,7 @@ The pipeline flows from (a) the formating + translation of SemEval data and its 
     * `goldstandard_auswertung`: Documentation of Label Discussions and final Gold Standard
   * `all_headlines_260922.xlsx`: Scraped headlines from real news outlets
   * `tagesschau_template_260917.xlsx`: Annotation template
-*  `d._paper+appebduces/`: Draft paper, final paper and appendices A and B
+*  `d._paper+appebduces/`: Draft paper, final paper and appendices A (LLM prompts) and B (
 
 ## Data Composition
 * Starting point: ~1,400 SemEval 2023 headlines
