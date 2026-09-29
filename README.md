@@ -4,6 +4,7 @@ News headlines condense complex issues into key words that set the perspective (
 * Language(s): Python (Jupyter Notebooks, 100%)
 * Framework / runtime: Hugging Face Transformers, PyTorch
 * Notable libraries: pandas, transformers (AutoTokenizer, AutoModelForSequenceClassification), torch, sklearn (for metrics), BERTopic (for clustering)
+* Formal Paper: [PDF](d._paper+appendices/final_paper_framedetect_ss26.pdf) (Authors: Felix Wiendl, Alvaro Dill, Tai Nguyen)
 
 ## Target Policy Frames & Distribution of LLM title annotated Frames
 The model classifies headlines across 14 policy frames adapted from the Policy Frames Codebook (Boydstun et al. 2020), plus a technical residual category:
@@ -28,9 +29,9 @@ The model classifies headlines across 14 policy frames adapted from the Policy F
 
 ## Methods Outline
 * **Transformer-Based Multi-Label Frame Classifier**: A fine-tuned `LSX-UniWue/ModernGBERT_134M` model trained to detect 14 generic policy frames (plus a residual category) at the headline level.
-* **Weak Supervision \& Pseudo-Labeling Pipeline**: An automated annotation strategy combining LLM annotations (GPT-5.6, Claude, Gemini/Mistral; LLM prompts are stored in appendix A) with majority voting and article-reference matching across SemEval-2023, Media Frames Corpus (MFC), and Chinese News Framing Dataset (CHN).
+* **Weak Supervision \& Pseudo-Labeling Pipeline**: An automated annotation strategy combining LLM annotations (GPT-5.6, Claude, Gemini/Mistral; LLM prompts are stored in [appendix A](d._paper+appendices/appendix_A.md)) with majority voting and article-reference matching across SemEval-2023, Media Frames Corpus (MFC), and Chinese News Framing Dataset (CHN).
 * **Human-Annotated Gold Standard**: A manually curated benchmark set of 70 *Tagesschau* headlines for model evaluation against real-world media.
-* **Ground-News-Inspired Prototype**: BERTopic clustering and inference pipeline designed to group comparable news headlines across German news outlets (*Tagesschau*, *FAZ*, *taz*) and highlight frame distributions. The final results of the pipe are outputted in form of an excel file (Appendix B)
+* **Ground-News-Inspired Prototype**: BERTopic clustering and inference pipeline designed to group comparable news headlines across German news outlets (*Tagesschau*, *FAZ*, *taz*) and highlight frame distributions. The final results of the pipe are outputted in form of an excel file ([Appendix B](d._paper+appendices/appendix_B.xlsx))
 
 ## Repo Structure
 The pipeline flows from (a) the formating + translation of SemEval data and its ground truth, a human and AI annotation pre-study as well as general preprocessing, also leveraging LLMs (GPT, Claude, Gemini, Mistral) for weak supervision on 1400+ headlines with consensus voting. Combined with additional datasets (CHN, MFC), the aggregated training data fine-tunes a Modern GBERT 134M model in (b), which is then evaluated in (c) against real Tagesschau headlines. The classification is multi-label meaning each headline can match 0 to multiple frames from the 15-category taxonomy.
