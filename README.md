@@ -45,12 +45,11 @@ The pipeline flows from (a) raw SemEval data through human pre-study annotations
   * `3_realdata_model_application.ipynb`: Tagesschau gold standard evaluation (70 headlines) + Applied combination of real data inference and topic clustering using BERTopic
   * `Goldstandard_Tagesschau/`: Manually annotated benchmark sets + Evaluation
     * `[name]_tagesschau_goldstandard_geprueft_[date]`: three annotation files
-    * `Notebook Golstandard Tagesschau.json`: ???
-    * `goldstandard_auswertung`: Creating gold standard file
-      * `entscheidungen.json`: ???
-      * `goldstandard.xlsx`: final gold standard file aggregating all three annotation files  
+    * `Notebook Golstandard Tagesschau.ipynb`: Inter-Rater Agreement Assessment, Adjudication, and Gold Standard Creation
+    * `goldstandard_auswertung`: Documentation of Label Discussions and final Gold Standard
   * `all_headlines_260922.xlsx`: Scraped headlines from real news outlets
   * `tagesschau_template_260917.xlsx`: Annotation template
+*  `d._paper+appebduces/`: Draft paper, final paper and appendices A and B
 
 ## Data Composition
 * Starting point: ~1,400 SemEval 2023 headlines
