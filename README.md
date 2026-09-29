@@ -33,13 +33,14 @@ The model classifies headlines across 14 policy frames adapted from the Policy F
 * **Ground-News-Inspired Prototype**: A BERTopic clustering and inference pipeline designed to group comparable news headlines across German news outlets (*Tagesschau*, *FAZ*, *taz*) and highlight frame distributions.
 
 ## Repo Structure
-The pipeline flows from (a) raw SemEval data through human pre-study annotations to establish ground truth, then leverages LLM APIs (GPT, Claude, Gemini, Mistral) for weak supervision on 1400+ headlines with consensus voting. Combined with additional datasets (CHN, MFC), the aggregated training data fine-tunes a Modern GBERT 134M model in (b), which is then evaluated in (c) against real Tagesschau headlines. The classification is multi-label meaning each headline can match 0 to multiple frames from the 15-category taxonomy.
+The pipeline flows from (a) the formating + translation of SemEval data and its ground truth, a human and AI annotation pre-study as well as general preprocessing, also leveraging LLMs (GPT, Claude, Gemini, Mistral) for weak supervision on 1400+ headlines with consensus voting. Combined with additional datasets (CHN, MFC), the aggregated training data fine-tunes a Modern GBERT 134M model in (b), which is then evaluated in (c) against real Tagesschau headlines. The classification is multi-label meaning each headline can match 0 to multiple frames from the 15-category taxonomy.
 * `a._preprocessing+annotation/`: Data preparation and annotation pipeline
   * `0_data_startingpoint_semeval23_framedetect/`: Raw multilingual SemEval 2023 data (en, fr, ge, it, po)
-  * `1_annotationsstudie_pre-study_semeval/`: Pre-study human annotation: Prepared data + Annotated data + Results
-  * `2_llm-titel-annotation-aller-1400-titel_semeval/`: LLM-based annotation of ~1400 headlines: Unlabeled set + LLM annotations + Ground truth
+  * `1_annotationsstudie_pre-study_semeval/`: Pre-study human and llm annotation: Prepared data + Annotated data + Results
+  * `2_llm-titel-annotation-aller-1400-titel_semeval/`: LLM-based annotation of ~1400 headlines: Unlabeled set + LLM annotations + Ground truth 
   *  `3_additional_data_chn+mfc/`: Additional datasets and LLM annotation on new data
   *  `Z_Policy_Frames_Codebook.pdf`: Reference codebook (Boydstun et al. 2020)
+  *  `preprocessing.ipynb`: further preprocessing after annotation study (semeval, mfc, chn) + llm annotation (semeval, mfc, chn) + normalization and combining to trainingdataset
 *  `b._fine_tuning+model_application/2_fine_tuning.ipynb`: Model training and inference using LSX-`UniWue/ModernGBERT_134M` on labeled data
 *  `c._real_data_application/`: Evaluation and applied inference
   * `3_realdata_model_application.ipynb`: Tagesschau gold standard evaluation (70 headlines) + Applied combination of real data inference and topic clustering using BERTopic
