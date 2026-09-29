@@ -68,7 +68,7 @@ The pipeline flows from (a) the formating + translation of SemEval data and its 
   * Micro-F1: 0.588
   * Macro-F1: 0.379
   * Test set: 70 independently annotated human headlines from Tagesschau (Sept 17, 2026)
-  * More realistic evaluation against real-world German news (Sept 22, 2026
+  * More realistic evaluation against real-world German news (Sept 22, 2026)
  
  The drop-off in macro-F1 (0.532 to 0.379) on the gold standard reflects challenges with underrepresented frames, particularly the rare categories like Quality of Life (1%), Cultural Identity (1.29%), and Fairness & Equality (1.71%).
 
